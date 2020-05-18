@@ -130,7 +130,11 @@
 			// The crowd is pleased
 			// The delay is to making large crowds have a longer laster applause
 			var/delay_offset = 0
+<<<<<<< HEAD
 			for(var/mob/M in viewers(src, 7))
+=======
+			for(var/mob/M in fov_viewers(world.view, src))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				var/mob/living/carbon/human/C = M
 				if (ishuman(M))
 					addtimer(CALLBACK(C, /mob/.proc/emote, "clap"), delay_offset * 0.3)

@@ -50,7 +50,11 @@
 	if(M == hal_target)
 		to_chat(hal_target, "<span class='userdanger'>[M] is hit by \a [src] in the chest!</span>")
 		hal_apply_effect()
+<<<<<<< HEAD
 	else if(M in view(hal_target))
+=======
+	else if(M in hal_target.fov_view())
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		to_chat(hal_target, "<span class='danger'>[M] is hit by \a [src] in the chest!!</span>")
 	if(damage_type == BRUTE)
 		var/splatter_dir = dir

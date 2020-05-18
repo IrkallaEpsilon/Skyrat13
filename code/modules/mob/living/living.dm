@@ -379,7 +379,11 @@
 	stop_pulling()
 
 //same as above
+<<<<<<< HEAD
 /mob/living/pointed(atom/A as mob|obj|turf in view())
+=======
+/mob/living/pointed(atom/A as mob|obj|turf in fov_view())
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	if(incapacitated())
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_DEATHCOMA))

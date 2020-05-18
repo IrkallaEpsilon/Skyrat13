@@ -490,6 +490,7 @@
 	update_icon()
 
 /obj/structure/bloodsucker/candelabrum/process()
+<<<<<<< HEAD
 	if(lit)
 		for(var/mob/living/carbon/human/H in viewers(7, src))
 			var/datum/antagonist/vassal/T = H.mind.has_antag_datum(ANTAG_DATUM_VASSAL)
@@ -497,6 +498,16 @@
 				return
 			H.hallucination = 20
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "vampcandle", /datum/mood_event/vampcandle)
+=======
+	if(!lit)
+		return
+	for(var/mob/living/carbon/human/H in fov_viewers(7, src))
+		var/datum/antagonist/vassal/T = H.mind.has_antag_datum(ANTAG_DATUM_VASSAL)
+		if(AmBloodsucker(H) || T) //We dont want vassals or vampires affected by this
+			return
+		H.hallucination = 20
+		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "vampcandle", /datum/mood_event/vampcandle)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   OTHER THINGS TO USE: HUMAN BLOOD. /obj/effect/decal/cleanable/blood
 

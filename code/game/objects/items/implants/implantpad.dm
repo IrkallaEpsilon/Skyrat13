@@ -66,7 +66,11 @@
 		if(ismob(loc))
 			attack_self(loc)
 		else
+<<<<<<< HEAD
 			for(var/mob/M in viewers(1, src))
+=======
+			for(var/mob/M in fov_viewers(1, src))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				if(M.client)
 					attack_self(M)
 		add_fingerprint(usr)

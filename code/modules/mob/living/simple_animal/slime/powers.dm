@@ -28,7 +28,11 @@
 		return 0
 
 	var/list/choices = list()
+<<<<<<< HEAD
 	for(var/mob/living/C in view(1,src))
+=======
+	for(var/mob/living/C in fov_view(1,src))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		if(C!=src && Adjacent(C))
 			choices += C
 

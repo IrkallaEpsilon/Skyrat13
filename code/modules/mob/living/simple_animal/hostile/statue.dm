@@ -125,7 +125,11 @@
 
 	// This loop will, at most, loop twice.
 	for(var/atom/check in check_list)
+<<<<<<< HEAD
 		for(var/mob/living/M in viewers(world.view + 1, check) - src)
+=======
+		for(var/mob/living/M in fov_viewers(world.view + 1, check) - src)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 			if(M.client && CanAttack(M) && !M.silicon_privileges)
 				if(!M.eye_blind)
 					return M

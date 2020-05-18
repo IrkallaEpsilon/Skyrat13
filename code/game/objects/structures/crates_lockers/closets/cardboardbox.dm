@@ -42,7 +42,11 @@
 			Snake = L
 			break
 		if(Snake)
+<<<<<<< HEAD
 			alerted = viewers(7,src)
+=======
+			alerted = fov_viewers(world.view,src)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	..()
 	if(LAZYLEN(alerted))
 		egged = world.time + SNAKE_SPAM_TICKS

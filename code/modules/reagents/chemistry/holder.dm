@@ -535,7 +535,11 @@
 					add_reagent(P, cached_results[P]*multiplier, null, chem_temp)
 
 
+<<<<<<< HEAD
 				var/list/seen = viewers(4, get_turf(my_atom))//Sound and sight checkers
+=======
+				var/list/seen = fov_viewers(4, get_turf(my_atom))//Sound and sight checkers
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				var/iconhtml = icon2html(cached_my_atom, seen)
 				if(cached_my_atom)
 					if(!ismob(cached_my_atom)) // No bubbling mobs

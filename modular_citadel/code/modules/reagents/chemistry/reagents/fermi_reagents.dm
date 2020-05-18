@@ -120,7 +120,11 @@
 				to_chat(M, "You find yourself unable to supress the desire to howl!")
 				M.emote("awoo")
 			if(prob(20))
+<<<<<<< HEAD
 				var/list/seen = viewers(5, get_turf(M))//Sound and sight checkers
+=======
+				var/list/seen = M.fov_view() - M //Sound and sight checkers
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				for(var/victim in seen)
 					if((istype(victim, /mob/living/simple_animal/pet/)) || (victim == M) || (!isliving(victim)))
 						seen = seen - victim
@@ -141,7 +145,11 @@
 				to_chat(M, "You find yourself unable to supress the desire to howl!")
 				M.emote("awoo")
 			if(prob(5))
+<<<<<<< HEAD
 				var/list/seen = viewers(5, get_turf(M))//Sound and sight checkers
+=======
+				var/list/seen = M.fov_view() - M //Sound and sight checkers
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				for(var/victim in seen)
 					if((istype(victim, /mob/living/simple_animal/pet/)) || (victim == M) || (!isliving(victim)))
 						seen = seen - victim

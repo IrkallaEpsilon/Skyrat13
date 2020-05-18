@@ -194,7 +194,11 @@ Creating a chem with a low purity will make you permanently fall in love with so
 		if (M.ckey == creatorID && creatorName == M.real_name)//If the creator drinks it, they fall in love randomly. If someone else drinks it, the creator falls in love with them.
 			if(M.has_status_effect(STATUS_EFFECT_INLOVE))//Can't be enthralled when enthralled, so to speak.
 				return
+<<<<<<< HEAD
 			var/list/seen = viewers(7, get_turf(M))
+=======
+			var/list/seen = (M.fov_view(M.client?.view || world.view) - M) | viewers(M.client?.view || world.view, M)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 			for(var/victim in seen)
 				if(ishuman(victim))
 					var/mob/living/carbon/V = victim
@@ -213,7 +217,11 @@ Creating a chem with a low purity will make you permanently fall in love with so
 			var/mob/living/carbon/C = get_mob_by_key(creatorID)
 			if(M.has_status_effect(STATUS_EFFECT_INLOVE))
 				return
+<<<<<<< HEAD
 			if((C in viewers(7, get_turf(M))) && (C.client))
+=======
+			if(C.client && (M in C.fov_view(C.client.view)))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 				M.reagents.del_reagent(type)
 				FallInLove(C, M)
 			return
@@ -279,7 +287,11 @@ Creating a chem with a low purity will make you permanently fall in love with so
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD))
 		return ..()
 	if(!M.has_status_effect(STATUS_EFFECT_INLOVE))
+<<<<<<< HEAD
 		var/list/seen = viewers(7, get_turf(M))//Sound and sight checkers
+=======
+		var/list/seen = (M.fov_view(M.client?.view || world.view) - M) | viewers(M.client?.view || world.view, M)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		for(var/victim in seen)
 			if((istype(victim, /mob/living/simple_animal/pet/)) || (victim == M) || (M.stat == DEAD) || (!isliving(victim)))
 				seen = seen - victim

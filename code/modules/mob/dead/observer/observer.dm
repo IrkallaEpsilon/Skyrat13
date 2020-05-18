@@ -709,7 +709,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 //this is a mob verb instead of atom for performance reasons
 //see /mob/verb/examinate() in mob.dm for more info
 //overridden here and in /mob/living for different point span classes and sanity checks
+<<<<<<< HEAD
 /mob/dead/observer/pointed(atom/A as mob|obj|turf in view())
+=======
+/mob/dead/observer/pointed(atom/A as mob|obj|turf in fov_view())
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	if(!..())
 		return 0
 	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A].</span>")

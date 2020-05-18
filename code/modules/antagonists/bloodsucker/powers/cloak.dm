@@ -19,10 +19,16 @@
 	if(!.)
 		return
 	// must have nobody around to see the cloak
+<<<<<<< HEAD
 	for(var/mob/living/M in viewers(9, owner))
 		if(M != owner)
 			to_chat(owner, "<span class='warning'>You may only vanish into the shadows unseen.</span>")
 			return FALSE
+=======
+	for(var/mob/living/M in fov_viewers(9, owner) - owner)
+		to_chat(owner, "<span class='warning'>You may only vanish into the shadows unseen.</span>")
+		return FALSE
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	return TRUE
 
 /datum/action/bloodsucker/cloak/ActivatePower()

@@ -1257,7 +1257,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	..()
 	if(!target.halbody)
 		var/list/possible_points = list()
+<<<<<<< HEAD
 		for(var/turf/open/floor/F in view(target,world.view))
+=======
+		for(var/turf/open/floor/F in target.fov_view(world.view))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 			possible_points += F
 		if(possible_points.len)
 			var/turf/open/floor/husk_point = pick(possible_points)
@@ -1288,7 +1292,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 	var/list/turf/startlocs = list()
+<<<<<<< HEAD
 	for(var/turf/open/T in view(world.view+1,target)-view(world.view,target))
+=======
+	for(var/turf/open/T in target.fov_view(world.view+1)-view(world.view,target))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		startlocs += T
 	if(!startlocs.len)
 		qdel(src)

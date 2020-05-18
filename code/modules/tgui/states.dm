@@ -99,7 +99,11 @@
   * return UI_state The state of the UI.
  **/
 /mob/living/proc/shared_living_ui_distance(atom/movable/src_object)
+<<<<<<< HEAD
 	if(!(src_object in view(src))) // If the object is obscured, close it.
+=======
+	if(!(src_object in fov_view())) // If the object is obscured, close it.
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		return UI_CLOSE
 
 	var/dist = get_dist(src_object, src)

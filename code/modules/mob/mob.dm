@@ -325,8 +325,18 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 /mob/proc/show_inv(mob/user)
 	return
 
+<<<<<<< HEAD
 //mob verbs are faster than object verbs. See https://secure.byond.com/forum/?post=1326139&page=2#comment8198716 for why this isn't atom/verb/examine()
 /mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
+=======
+//view() but with a signal, to allow blacklisting some of the otherwise visible atoms.
+/mob/proc/fov_view(dist = world.view)
+	. = view(dist, src)
+	SEND_SIGNAL(src, COMSIG_MOB_FOV_VIEW, .)
+
+//mob verbs are faster than object verbs. See https://secure.byond.com/forum/?post=1326139&page=2#comment8198716 for why this isn't atom/verb/examine()
+/mob/verb/examinate(atom/A as mob|obj|turf in fov_view()) //It used to be oview(12), but I can't really say why
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	set name = "Examine"
 	set category = "IC"
 
@@ -347,7 +357,11 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 //note: ghosts can point, this is intended
 //visible_message will handle invisibility properly
 //overridden here and in /mob/dead/observer for different point span classes and sanity checks
+<<<<<<< HEAD
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
+=======
+/mob/verb/pointed(atom/A as mob|obj|turf in fov_view())
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	set name = "Point To"
 	set category = "Object"
 

@@ -64,7 +64,11 @@
 			to_chat(owner, "<span class='warning'>Your victim's eyes are glazed over. They cannot perceive you.</span>")
 		return FALSE
 	// Check: Target See Me? (behind wall)
+<<<<<<< HEAD
 	if(!(target in viewers(target_range, get_turf(owner))))
+=======
+	if(!(owner in target.fov_view()))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		// Sub-Check: GET CLOSER
 		//if (!(owner in range(target_range, get_turf(target)))
 		//	if (display_error)
@@ -137,7 +141,11 @@
 	if(istype(target) && success)
 		target.notransform = FALSE
 		REMOVE_TRAIT(target, TRAIT_COMBAT_MODE_LOCKED, src)
+<<<<<<< HEAD
 		if(istype(L) && target.stat == CONSCIOUS && (target in view(10, get_turf(L)))) // They Woke Up! (Notice if within view)
+=======
+		if(istype(L) && target.stat == CONSCIOUS && (target in L.fov_view(10))) // They Woke Up! (Notice if within view)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 			to_chat(L, "<span class='warning'>[target] has snapped out of their trance.</span>")
 
 

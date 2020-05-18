@@ -127,7 +127,11 @@
 
 
 /obj/singularity/narsie/mezzer()
+<<<<<<< HEAD
 	for(var/mob/living/carbon/M in viewers(consume_range, src))
+=======
+	for(var/mob/living/carbon/M in fov_viewers(consume_range, src))
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		if(M.stat == CONSCIOUS)
 			if(!iscultist(M))
 				to_chat(M, "<span class='cultsmall'>You feel conscious thought crumble away in an instant as you gaze upon [src.name]...</span>")

@@ -135,7 +135,12 @@
 			outmsg = "<span class='warning'>You miss the lens of [C] with [src]!</span>"
 
 	//catpeople
+<<<<<<< HEAD
 	for(var/mob/living/carbon/human/H in view(1,targloc))
+=======
+	var/list/viewers = fov_viewers(1,targloc)
+	for(var/mob/living/carbon/human/H in viewers)
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 		if(!iscatperson(H) || H.incapacitated() || H.eye_blind )
 			continue
 		if(!H.lying)

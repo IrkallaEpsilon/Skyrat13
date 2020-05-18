@@ -12,7 +12,11 @@
 	if(isturf(A) || incapacitated()) // pretty annoying to wave your fist at floors and walls. And useless.
 		return TRUE
 	changeNext_move(CLICK_CD_RANGE)
+<<<<<<< HEAD
 	var/list/target_viewers = viewers(11, A) //Byond proc, doesn't check for blindness.
+=======
+	var/list/target_viewers = fov_viewers(11, A) //doesn't check for blindness.
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	if(!(src in target_viewers)) //click catcher issuing calls for out of view objects.
 		return TRUE
 	if(!has_active_hand())

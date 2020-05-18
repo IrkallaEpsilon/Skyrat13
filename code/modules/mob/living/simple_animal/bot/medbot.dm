@@ -418,7 +418,11 @@
 	else
 		..()
 
+<<<<<<< HEAD
 /mob/living/simple_animal/bot/medbot/examinate(atom/A as mob|obj|turf in view())
+=======
+/mob/living/simple_animal/bot/medbot/examinate(atom/A as mob|obj|turf in fov_view())
+>>>>>>> 08280a853e... Renames 'visible_atoms' and 'get_actual_viewers' procs to 'fov_view' and 'fov_viewers' (#12282)
 	..()
 	if(!is_blind(src))
 		chemscan(src, A)
